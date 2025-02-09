@@ -23,11 +23,11 @@ public class Main {
         System.out.println("You entered the word 'END'. Let's move on!:D");//Robloc
         //Robloc
         for (String city : cities) {
-            collectTemperatures(city);
+            getTemps(city);
         }
 //Robloc
         for (int i = 0; i < cities.size(); i++) {
-            double avg = calculateAverage(allTemps.get(i));
+            double avg = calcAvg(allTemps.get(i));
             avgTemps.add(avg);
             System.out.println("The average temperature for " + cities.get(i) + " is: " + avg);
         }
@@ -39,26 +39,26 @@ public class Main {
         cities.add(city);
     }
 //Robloc
-    static void collectTemperatures(String city) {
-        ArrayList<Double> tempsForCity = new ArrayList<>();
+    static void getTemps(String city) {
+        ArrayList<Double> tempsCity = new ArrayList<>();
         System.out.println("Enter the temperatures for " + city + " for the next 5 days:");
 
         for (int i = 1; i <= 5; i++) {
             System.out.println("Enter day " + i + " temperature:");
             double temp = input.nextDouble();
-            tempsForCity.add(temp);
+            tempsCity.add(temp);
         }
 //Robloc
-        allTemps.add(tempsForCity);
+        allTemps.add(tempsCity);
 //Robloc
         input.nextLine();
     }
 //Robloc
-    static double calculateAverage(ArrayList<Double> tempsForCity) {
+    static double calcAvg(ArrayList<Double> tempsCity) {
         double sum = 0;
-        for (double temp : tempsForCity) {
+        for (double temp : tempsCity) {
             sum += temp;
         }
-        return sum / tempsForCity.size();//Robloc
+        return sum / tempsCity.size();//Robloc
     }//Robloc
 }//Robloc
