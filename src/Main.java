@@ -43,7 +43,7 @@ public class Main {
         ArrayList<Double> tempsCity = new ArrayList<>();
         System.out.println("Enter the temperatures for " + city + " for the next 5 days:");
 
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 0; i < 5; i++) {
             System.out.println("Enter day " + i + " temperature:");
             double temp = input.nextDouble();
             tempsCity.add(temp);
