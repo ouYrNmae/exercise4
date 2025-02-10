@@ -5,8 +5,7 @@ import java.util.*;
 
 public class Main {
     static Scanner input = new Scanner(System.in);
-    static ArrayList<String> cities = new ArrayList<>();
-    static ArrayList<ArrayList<Double>> allTemps = new ArrayList<>();
+    static HashMap<String, ArrayList<Double>> cityTempsMap = new HashMap<>();
     static ArrayList<Double> avgTemps = new ArrayList<>();
 
     public static void main(String[] args) {
