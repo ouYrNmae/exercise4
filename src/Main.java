@@ -1,16 +1,17 @@
 //Jocelin Martinez-Reyes
 //Exercise 4 2/5/25
-//Robloc
-import java.util.*;
+//robloc
 
-public class Main {
+import java.util.*;//robloc
+
+public class Main {//roblox
     static Scanner input = new Scanner(System.in);
     static HashMap<String, ArrayList<Double>> cityTempsMap = new HashMap<>();
     static ArrayList<Double> avgTemps = new ArrayList<>();
 
     public static void main(String[] args) {
         String cityInput = "";
-//Robloc
+
         do {
             System.out.println("Note: To stop adding cities, enter the word 'END'.\nAdd a city:");
             cityInput = input.nextLine();
@@ -18,46 +19,46 @@ public class Main {
                 addCities(cityInput);
             }
         } while (!cityInput.equals("END"));
-//Robloc
-        System.out.println("You entered the word 'END'. Let's move on!:D");//Robloc
-        //Robloc
-        for (String city : cities) {
+
+        System.out.println("You entered the word 'END'. Let's move on!:D");
+
+        for (String city : cityTempsMap.keySet()) {
             getTemps(city);
         }
-//Robloc
-        for (int i = 0; i < cities.size(); i++) {
-            double avg = calcAvg(allTemps.get(i));
+
+        for (String city : cityTempsMap.keySet()) {
+            double avg = calcAvg(cityTempsMap.get(city));
             avgTemps.add(avg);
-            System.out.println("The average temperature for " + cities.get(i) + " is: " + avg);
+            System.out.println("The average temperature for " + city + " is: " + avg);
         }
-//Robloc
+
         input.close();
     }
-//Robloc
+
     static void addCities(String city) {
-        cities.add(city);
+        cityTempsMap.put(city, new ArrayList<>());
     }
-//Robloc
+//robloc
     static void getTemps(String city) {
         ArrayList<Double> tempsCity = new ArrayList<>();
         System.out.println("Enter the temperatures for " + city + " for the next 5 days:");
-
+//robloc
         for (int i = 1; i <= 5; i++) {
             System.out.println("Enter day " + i + " temperature:");
             double temp = input.nextDouble();
             tempsCity.add(temp);
         }
-//Robloc
-        allTemps.add(tempsCity);
-//Robloc
+//robloc
+        cityTempsMap.put(city, tempsCity);
         input.nextLine();
     }
-//Robloc
+//robloc
     static double calcAvg(ArrayList<Double> tempsCity) {
         double sum = 0;
         for (double temp : tempsCity) {
             sum += temp;
         }
-        return sum / tempsCity.size();//Robloc
-    }//Robloc
-}//Robloc
+        return sum / tempsCity.size();//robloc
+    }//robloc
+}
+//robloc
